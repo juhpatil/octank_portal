@@ -132,14 +132,13 @@ var WildRydes = window.WildRydes || {};
     function handleRegister(event) {
         var email = $('#emailInputRegister').val();
         var password = $('#passwordInputRegister').val();
-        var password2 = $('#password2InputRegister').val();
 
         var onSuccess = function registerSuccess(result) {
             var cognitoUser = result.user;
             console.log('user name is ' + cognitoUser.getUsername());
             var confirmation = ('Registration successful. Please check your email inbox or spam folder for your verification code.');
             if (confirmation) {
-                window.location.href = 'verify.html';
+                window.location.href = 'ride.html';
             }
         };
         var onFailure = function registerFailure(err) {
@@ -147,11 +146,6 @@ var WildRydes = window.WildRydes || {};
         };
         event.preventDefault();
 
-        if (password === password2) {
-            register(email, password, onSuccess, onFailure);
-        } else {
-            alert('Passwords do not match');
-        }
     }
 
     function handleVerify(event) {
