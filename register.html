@@ -63,10 +63,10 @@ var food_pref= document.getElementById("foodprefRegister").value;
 var params = 'email='+email+'&name='+name+'&prof='+prof+'&nationality='+nationality+'&purpose='+purpose+'&food_pref='+food_pref;
 
 http.open('POST', url, true);
-http.setHeader("Access-Control-Allow-Origin", "*");
-http.setHeader("Access-Control-Allow-Credentials", "true");
-http.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
-http.setHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+http.setRequestHeader("Access-Control-Allow-Origin", "*");
+http.setRequestHeader("Access-Control-Allow-Credentials", "true");
+http.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+http.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
 
 http.send(params);
 console.log("parameters sent")
