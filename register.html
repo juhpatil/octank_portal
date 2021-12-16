@@ -61,8 +61,9 @@ var nationality= document.getElementById("nationalityRegister").value;
 var purpose= document.getElementById("purposeRegister").value;
 var food_pref= document.getElementById("foodprefRegister").value;
 var params = 'email='+email+'&name='+name+'&prof='+prof+'&nationality='+nationality+'&purpose='+purpose+'&food_pref='+food_pref;
-http.setRequestHeader('Access-Control-Allow-Origin', '*');
+
 http.open('POST', url, true);
+http.setRequestHeader('Access-Control-Allow-Origin', '*');
 http.send(params);
 console.log("parameters sent")
 console.log("HTTP status")
