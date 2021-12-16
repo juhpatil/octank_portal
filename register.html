@@ -44,10 +44,32 @@
               <input type="text" id="nationalityRegister" placeholder="Nationality" pattern=".*" required>
               <input type="text" id="purposeRegister" placeholder="Purpose of visit" pattern=".*" required>
               <input type="text" id="foodprefRegister" placeholder="Food preference" pattern=".*" required>
-              <input type="submit" onclick="location.href='/ride.html'" value="Let's go">
+              <input type="submit" onclick="click()" value="Let's go">
 
             </form>
         </section>
+
+<script>
+function click() {
+var http = new XMLHttpRequest();
+var url = 'https://5umpqvqsxj.execute-api.us-east-1.amazonaws.com/pre-prod';
+var email= document.getElementById(emailInputRegister)
+var name= document.getElementById(nameRegister)
+var prof= document.getElementById(professionRegister)
+var nationality= document.getElementById(nationalityRegister)
+var purpose= document.getElementById(purposeRegister)
+var food_pref= document.getElementById(foodprefRegister)
+var params = 'email='+email+'&name='+name+'&prof='+prof+'&nationality='+nationality+'&purpose='+purpose+'&food_pref='+food_pref;
+http.open('POST', url, true);
+http.send(params);
+http.onreadystatechange = function() {//Call a function when the state changes.
+    if(http.readyState == 4 && http.status == 200) {
+        window.location.href = "https://master.ddbif0n99td4d.amplifyapp.com/ride.html";
+    }
+}
+
+}
+</script>
 
         <script src="js/vendor/jquery-3.1.0.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
