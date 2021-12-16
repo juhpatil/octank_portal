@@ -64,6 +64,8 @@ var params = 'email='+email+'&name='+name+'&prof='+prof+'&nationality='+national
 http.open('POST', url, true);
 http.send(params);
 console.log("parameters sent")
+console.log("HTTP status")
+console.log(http.status)
 http.onreadystatechange = function() {//Call a function when the state changes.
         window.location.href = "https://master.ddbif0n99td4d.amplifyapp.com/ride.html";
 }
