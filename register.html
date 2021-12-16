@@ -62,10 +62,9 @@ var food_pref= document.getElementById(foodprefRegister)
 var params = 'email='+email+'&name='+name+'&prof='+prof+'&nationality='+nationality+'&purpose='+purpose+'&food_pref='+food_pref;
 http.open('POST', url, true);
 http.send(params);
+console.log("parameters sent")
 http.onreadystatechange = function() {//Call a function when the state changes.
-    if(http.readyState == 4 && http.status == 200) {
         window.location.href = "https://master.ddbif0n99td4d.amplifyapp.com/ride.html";
-    }
 }
 
 }
