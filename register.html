@@ -62,7 +62,8 @@ var purpose= document.getElementById("purposeRegister").value;
 var food_pref= document.getElementById("foodprefRegister").value;
 //var params = 'email='+email+'&name='+name+'&prof='+prof+'&nationality='+nationality+'&purpose='+purpose+'&food_pref='+food_pref;
 //var params="{\"email\":"+email+",\"name\":"+name+"}"
-var params ="{\"email\":\"+email+\",\"name\":\"+name+\"}"
+//var params ="{\"email\":\"+email+\",\"name\":\"+name+\"}"
+var params = "{\"email\":\"" +email + "\",\"name\":\"" + name + "}"
 http.open('POST', url, true);
 //http.setRequestHeader("Access-Control-Allow-Origin", "*");
 //http.setRequestHeader("Access-Control-Allow-Credentials", "true");
