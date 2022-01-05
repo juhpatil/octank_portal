@@ -1,4 +1,9 @@
-# OCTANK EXPO FLORAL EXHIBITON REGISTRATION PORTAL - FRONT END, DYNAMODB GLOBAL TABLE
+# OCTANK EXPO FLORAL EXHIBITON REGISTRATION PORTAL
+## Data modelling
+1. Download the NoSQL Workbench: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/workbench.settingup.html
+2. Import the Octank_registration_portal.json file to visualize the model and get hands-on
+
+# FRONT END, DYNAMODB GLOBAL TABLE
 ## I. Create a DynamoDB Global table:
 ```
   1. aws dynamodb create-table \
