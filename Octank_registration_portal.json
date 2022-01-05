@@ -1,0 +1,378 @@
+{
+  "ModelName": "Octank_registration_portal",
+  "ModelMetadata": {
+    "Author": "juhpatil",
+    "DateCreated": "Dec 06, 2021, 09:25 AM",
+    "DateLastModified": "Jan 04, 2022, 11:57 AM",
+    "Description": "Events, users (visitors, speakers, volunteers)",
+    "AWSService": "Amazon DynamoDB",
+    "Version": "3.0"
+  },
+  "DataModel": [
+    {
+      "TableName": "registrations",
+      "KeyAttributes": {
+        "PartitionKey": {
+          "AttributeName": "pk",
+          "AttributeType": "S"
+        },
+        "SortKey": {
+          "AttributeName": "sk",
+          "AttributeType": "S"
+        }
+      },
+      "NonKeyAttributes": [
+        {
+          "AttributeName": "type",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "event_status",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "purpose_of_visit",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "profession",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "age",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "gender",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "vaccination_status",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "email_id",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "nationality",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "speaker",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "event_date",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "food_pref",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "name",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "booking_date",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "event_type",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "speaker_id",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "volunteer_id",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "event_name",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "speaker_name",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "date",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "status",
+          "AttributeType": "S"
+        },
+        {
+          "AttributeName": "type_of_event",
+          "AttributeType": "S"
+        }
+      ],
+      "GlobalSecondaryIndexes": [
+        {
+          "IndexName": "inverse",
+          "KeyAttributes": {
+            "PartitionKey": {
+              "AttributeName": "sk",
+              "AttributeType": "S"
+            },
+            "SortKey": {
+              "AttributeName": "pk",
+              "AttributeType": "S"
+            }
+          },
+          "Projection": {
+            "ProjectionType": "INCLUDE",
+            "NonKeyAttributes": [
+              "type",
+              "speaker",
+              "speaker_id",
+              "name",
+              "date",
+              "status",
+              "type_of_event",
+              "age",
+              "gender",
+              "nationality",
+              "email_id",
+              "booking_date"
+            ]
+          }
+        }
+      ],
+      "TableData": [
+        {
+          "pk": {
+            "S": "visitor_1"
+          },
+          "sk": {
+            "S": "event_1"
+          },
+          "type": {
+            "S": "visitor-event"
+          },
+          "email_id": {
+            "S": "jane@abc.com"
+          },
+          "event_date": {
+            "S": "2021-04-04T16:00"
+          },
+          "name": {
+            "S": "Jane A"
+          },
+          "booking_date": {
+            "S": "2021-12-07T12:00"
+          },
+          "event_type": {
+            "S": "In-person"
+          },
+          "event_name": {
+            "S": "All about Tulips"
+          },
+          "speaker_name": {
+            "S": "Eva"
+          }
+        },
+        {
+          "pk": {
+            "S": "vol_3"
+          },
+          "sk": {
+            "S": "profile_vol"
+          },
+          "type": {
+            "S": "volunteer"
+          },
+          "profession": {
+            "S": "Teaching assistant"
+          },
+          "age": {
+            "S": "37"
+          },
+          "gender": {
+            "S": "M"
+          },
+          "vaccination_status": {
+            "S": "Full"
+          },
+          "email_id": {
+            "S": "jake_wlf@vampire.com"
+          },
+          "nationality": {
+            "S": "Japanese"
+          },
+          "food_pref": {
+            "S": "V"
+          },
+          "name": {
+            "S": "Jake"
+          },
+          "volunteer_id": {
+            "S": "vol_3"
+          }
+        },
+        {
+          "pk": {
+            "S": "visitor_1"
+          },
+          "sk": {
+            "S": "profile_visitor"
+          },
+          "type": {
+            "S": "visitor"
+          },
+          "purpose_of_visit": {
+            "S": "Profession"
+          },
+          "profession": {
+            "S": "Florist"
+          },
+          "age": {
+            "S": "34"
+          },
+          "gender": {
+            "S": "F"
+          },
+          "vaccination_status": {
+            "S": "Full"
+          },
+          "email_id": {
+            "S": "jane@abc.com"
+          },
+          "nationality": {
+            "S": "American"
+          },
+          "food_pref": {
+            "S": "VG"
+          },
+          "name": {
+            "S": "Jane A"
+          }
+        },
+        {
+          "pk": {
+            "S": "visitor_2"
+          },
+          "sk": {
+            "S": "profile_visitor"
+          },
+          "type": {
+            "S": "visitor"
+          },
+          "purpose_of_visit": {
+            "S": "Leisure"
+          },
+          "profession": {
+            "S": "Engineer"
+          },
+          "age": {
+            "S": "29"
+          },
+          "gender": {
+            "S": "M"
+          },
+          "vaccination_status": {
+            "S": "Partial"
+          },
+          "email_id": {
+            "S": "abc@gmail.com"
+          },
+          "nationality": {
+            "S": "British"
+          },
+          "food_pref": {
+            "S": "NV"
+          },
+          "name": {
+            "S": "Ian S"
+          }
+        },
+        {
+          "pk": {
+            "S": "Admin"
+          },
+          "sk": {
+            "S": "event_1"
+          },
+          "type": {
+            "S": "event"
+          },
+          "event_status": {
+            "S": "Open"
+          },
+          "speaker": {
+            "S": "Eva"
+          },
+          "event_date": {
+            "S": "2021-04-04T16:00"
+          },
+          "event_type": {
+            "S": "In-person"
+          },
+          "event_name": {
+            "S": "All about Tulips"
+          }
+        },
+        {
+          "pk": {
+            "S": "Admin"
+          },
+          "sk": {
+            "S": "event_2"
+          },
+          "type": {
+            "S": "event"
+          },
+          "event_status": {
+            "S": "Pending_approval"
+          },
+          "speaker": {
+            "S": "Adam"
+          },
+          "event_date": {
+            "S": "2021-04-05T17:00"
+          },
+          "event_type": {
+            "S": "Stall"
+          },
+          "event_name": {
+            "S": "Iris care"
+          }
+        }
+      ],
+      "DataAccess": {
+        "MySql": {}
+      },
+      "BillingMode": "PROVISIONED",
+      "ProvisionedCapacitySettings": {
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "AutoScalingRead": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        },
+        "AutoScalingWrite": {
+          "ScalableTargetRequest": {
+            "MinCapacity": 1,
+            "MaxCapacity": 10,
+            "ServiceRole": "AWSServiceRoleForApplicationAutoScaling_DynamoDBTable"
+          },
+          "ScalingPolicyConfiguration": {
+            "TargetValue": 70
+          }
+        }
+      }
+    }
+  ]
+}
