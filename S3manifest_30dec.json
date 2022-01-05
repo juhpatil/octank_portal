@@ -1,0 +1,30 @@
+{
+    "fileLocations": [
+        {
+            "URIPrefixes": [
+                "https://s3.amazonaws.com/airflow-j/AWSDynamoDB/01640879669093-733d3b56/data/"
+            ]
+        }
+    ],
+
+    "globalUploadSettings": {"format":"JSON",
+    "delimiter":"\n","textqualifier":"\""
+    }
+}
+
+/*{
+    "fileLocations": [
+        
+        {
+            "URIPrefixes": [
+                "https://s3.amazonaws.com/s3qs/Police_Incidents_01012005_to_Current.csv"
+            ]
+        }
+    ],
+    "globalUploadSettings": {
+        "format": "CSV",
+        "delimiter": ",",
+        "textqualifier": "'",
+        "containsHeader": "true"
+    }
+}*/
